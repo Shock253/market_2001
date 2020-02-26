@@ -31,7 +31,6 @@ class Market
         inventory[item][:quantity] += quantity
         inventory[item][:vendors] << vendor
       end
-
       inventory
     end
   end

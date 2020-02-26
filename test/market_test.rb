@@ -127,7 +127,6 @@ class MarketTest < Minitest::Test
       "Tomato"
     ]
     assert_equal items, @market.sorted_item_list
-
   end
 end
 
