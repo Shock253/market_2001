@@ -14,4 +14,10 @@ class Vendor
   def stock(item, quantity)
     @inventory[item] += quantity
   end
+
+  def has_item?(find_item)
+    @inventory.any? do |item, _quantity|
+      item == find_item
+    end
+  end
 end

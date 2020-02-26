@@ -38,4 +38,10 @@ class VendorTest < Minitest::Test
 
     assert_equal inventory, @vendor.inventory
   end
+
+  def test_can_check_for_item
+    @vendor.stock(@item1, 30)
+    assert_equal true, @vendor.has_item?(@item1)
+    assert_equal false, @vendor.has_item?(@item2)
+  end
 end
