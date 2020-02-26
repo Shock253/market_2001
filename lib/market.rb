@@ -17,4 +17,10 @@ class Market
       names
     end
   end
+
+  def vendors_that_sell(item)
+    @vendors.find_all do |vendor|
+      vendor.has_item?(item)
+    end
+  end
 end
