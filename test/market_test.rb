@@ -103,11 +103,17 @@ class MarketTest < Minitest::Test
 
     assert_equal total_inventory, @market.total_inventory
   end
+
+  def test_overstocked_items
+    @vendor3.stock(@item3, 10)
+    @market.add_vendor(@vendor1)
+    @market.add_vendor(@vendor2)
+    @market.add_vendor(@vendor3)
+
+    assert_equal [@item1], @market.overstocked_items
+  end
 end
 
-# pry(main).overstocked_items
-# #=> [#<Item:0x007f9c56740d48...>]
-#
 # pry(main)> market.sorted_item_list
 # #=> ["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"]
 #
